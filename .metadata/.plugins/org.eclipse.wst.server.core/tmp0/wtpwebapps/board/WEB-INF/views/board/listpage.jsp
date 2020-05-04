@@ -25,7 +25,7 @@
 		<tbody>
 			<c:forEach items="${list}" var="list">
 				<tr>
-					<td><a href="/board/view?bno=${list.bno}">${list.title}</a></td>
+					<td><a href="/board/view?bno=${list.bno}">${list.bno}</a></td>
 					<td>${list.title}</td>
 					<td>${list.regDate}</td>
 					<td>${list.writer}</td>
@@ -36,13 +36,13 @@
 
 	</table>
 	<div>
-		<c:if test="${prev}">
-			<span>[ <a href="/board/listpage?num=${startPageNum - 1}">이전</a>
+		<c:if test="${page.prev}">
+			<span>[ <a href="/board/listpage?num=${page.startPageNum - 1}">이전</a>
 				]
 			</span>
 		</c:if>
 
-		<c:forEach begin="${startPageNum}" end="${endPageNum}" var="num">
+		<c:forEach begin="${page.startPageNum}" end="${page.endPageNum}" var="num">
 			<span> 
 			<c:if test="${select != num}">
 					<a href="/board/listpage?num=${num}">${num}</a>
@@ -53,8 +53,8 @@
 			</span>
 		</c:forEach>
 
-		<c:if test="${next}">
-			<span>[ <a href="/board/listpage?num=${endPageNum + 1}">다음</a>
+		<c:if test="${page.next}">
+			<span>[ <a href="/board/listpage?num=${page.endPageNum + 1}">다음</a>
 				]
 			</span>
 		</c:if>
