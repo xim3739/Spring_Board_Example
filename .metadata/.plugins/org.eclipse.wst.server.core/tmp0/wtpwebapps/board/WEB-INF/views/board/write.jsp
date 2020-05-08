@@ -6,15 +6,31 @@
 <head>
 <meta charset="UTF-8">
 <title>게시물 작성</title>
+<!-- 합쳐지고 최소화된 최신 CSS -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap.min.css">
+<!-- 부가적인 테마 -->
+<link rel="stylesheet"
+	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/css/bootstrap-theme.min.css">
+<!-- 합쳐지고 최소화된 최신 자바스크립트 -->
+<script
+	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+<!-- mobile -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 	<form method="post">
-
-		<label>제목</label> <input type="text" name="title" /><br /> <label>작성자</label>
-		<input type="text" name="writer" /><br /> <label>내용</label>
-		<textarea cols="50" rows="5" name="content"></textarea>
-		<br />
-
+		<div class="row">
+			<label>제목</label>
+			<input type="text" name="title" />
+		</div>
+		<div class="form-group">
+			<label>작성자</label> <input type="text" name="writer" />
+		</div>
+		<div class="form-group">
+			<label>내용</label>
+			<textarea cols="50" rows="5" name="content"></textarea>
+		</div>
 		<button type="submit">작성</button>
 
 	</form>
